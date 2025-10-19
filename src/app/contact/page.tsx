@@ -1,10 +1,11 @@
 // src/app/contact/page.tsx
 
 import type { Metadata } from 'next';
-import HealthCheckButton from '@/components/HealthCheckButton';
 import ContentWrapper from '@/components/ContentWrapper';
-import LiveTicker from '@/components/LiveTicker';
 import DemoTabs from '@/components/DemoTabs';
+import { Linkedin, Github, Mail, Phone } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Contact & API Demo | Brian Leow',
@@ -31,54 +32,43 @@ export default function ContactPage() {
                         <a href="tel:+353873794639" className="text-blue-500 hover:underline">+353 (087) 379 4639</a>
                     </p>
 
-                    <p>
-                        <strong className="font-medium">LinkedIn:</strong>{' '}
-                        <a
-                            href="https://www.linkedin.com/in/brian-leow"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-500 hover:underline font-medium"
-                        >
-                            /in/brian-leow 🔗
-                        </a>
-                    </p>
+                    <Link
+                        href="https://www.linkedin.com/in/brian-leow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center p-1 -ml-1 rounded-md text-blue-500 hover:text-teal-400 hover:bg-gray-700/50 transition-colors"
+                    >
+                        <Linkedin className="w-5 h-5 mr-3 text-teal-400" />
+                        <strong className="font-medium text-gray-300 mr-1">LinkedIn:</strong>
+                        <span className="ml-1">/in/brian-leow</span>
+                    </Link>
 
-                    <p>
-                        <strong className="font-medium">GitHub:</strong>{' '}
-                        <a
-                            href="https://github.com/brianleowjj"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-500 hover:underline font-medium"
-                        >
-                            /brianleowjj 💻
-                        </a>
-                    </p>
+                    <Link
+                        href="https://github.com/brianleowjj"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center p-1 -ml-1 rounded-md text-blue-500 hover:text-teal-400 hover:bg-gray-700/50 transition-colors"
+                    >
+                        <Github className="w-5 h-5 mr-3 text-teal-400" />
+                        <strong className="font-medium text-gray-300 mr-1">GitHub:</strong>
+                        <span className="ml-1">/brianleowjj</span>
+                    </Link>
 
-                    {/* <p className="mt-4 text-sm text-gray-500">
-                        I am currently pursuing a Masters of Science in Project Management at University College Dublin, expected to graduate in September 2026.
-                    </p> */}
+                    <Link
+                        href="https://wa.me/353873794639"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center p-1 -ml-1 rounded-md text-green-500 hover:text-teal-400 hover:bg-gray-700/50 transition-colors"
+                    >
+                        {/* Use FaWhatsapp here */}
+                        <FaWhatsapp className="w-5 h-5 mr-3 text-green-500" />
+                        <strong className="font-medium text-gray-300 mr-1">WhatsApp:</strong>
+                        <span className="ml-1">Start Chat</span>
+                    </Link>
                 </div>
             </section>
 
             {/* API Demonstration */}
-            {/* <section className="p-6 border rounded-lg shadow-md bg-gray-800 border-blue-400">
-                <h2 className="text-2xl font-semibold text-blue-400 mb-4">Live Backend API Health Check</h2>
-                <p className="text-gray-400 mb-4">
-                    Click the button below to execute a simulated GET request against a Next.js API Route (`/api/health-check`). This demonstrates my ability to design and implement robust backend service endpoints.
-                </p>
-
-                <HealthCheckButton />
-
-            </section> */}
-            {/* <section className="p-6 border rounded-lg shadow-md bg-gray-800 border-blue-400">
-                <h2 className="text-2xl font-semibold text-blue-400 mb-4">Live Data Integration</h2>
-                <p className="text-gray-400 mb-4">
-                    This demo showcases the backend's ability to fetch, format, and serve real-time financial data from an external API, a key requirement in FinTech development. Data updates every 15 seconds.
-                </p>
-                <LiveTicker />
-
-            </section> */}
             <section className="p-6 border rounded-lg shadow-md bg-gray-800 border-blue-400">
                 <h2 className="text-2xl font-semibold text-blue-400 mb-4">Backend Demo Showcase</h2>
                 <p className="text-gray-400 mb-4">

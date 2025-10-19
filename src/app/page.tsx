@@ -71,7 +71,7 @@ export default function HomePage() {
             href="/projects"
             className="px-8 py-4 bg-teal-600 text-white text-xl font-bold rounded-lg hover:bg-teal-500 transition-all duration-300 shadow-xl shadow-teal-700/50"
           >
-            🚀 View Key Projects ➡
+            View Key Projects
           </Link>
 
           {/* Experience Button - Secondary Action */}
@@ -79,13 +79,13 @@ export default function HomePage() {
             href="/experience"
             className="px-8 py-4 bg-gray-700 text-gray-200 text-xl font-bold rounded-lg hover:bg-gray-600 transition-all duration-300 shadow-xl shadow-gray-900/50"
           >
-            💼 Professional Experience ➡
+            Professional Experience
           </Link>
           <Link
             href="/contact"
             className="px-8 py-4 bg-blue-700 text-gray-200 text-xl font-bold rounded-lg hover:bg-blue-600 transition-all duration-300 shadow-xl shadow-gray-900/50"
           >
-            💼 Live Demo Showcase ➡
+            Live Demo Showcase
           </Link>
         </div>
       </section>
