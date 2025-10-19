@@ -1,103 +1,88 @@
-import Image from "next/image";
+// src/app/page.tsx
 
-export default function Home() {
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import HealthCheckButton from '@/components/HealthCheckButton';
+
+export const metadata: Metadata = {
+  title: 'Brian J.L. | Backend Developer',
+  description: 'Experienced backend software developer specializing in banking and payment solutions. Expertise in Node.js, API development, and system optimization.',
+};
+
+const keyTechnologies = ['Nodejs', 'Express', 'MongoDB', 'Java', 'PostgreSQL', 'Kubernetes', 'Docker'];
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    // Use min-h-[90vh] to ensure the content fills the screen below the Navbar
+    <div className="flex min-h-[90vh] items-center justify-center p-6 sm:p-12">
+      <section className="text-center max-w-4xl pt-16 pb-20">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Your Name and Core Title */}
+        <p className="text-lg text-blue-400 font-semibold mb-2 tracking-widest uppercase">
+          Software Developer
+        </p>
+        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">
+          Brian Jia Jun Leow
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-400 mb-8 font-light italic max-w-3xl mx-auto">
+          Expert in API development and database management, delivering high-quality, efficient software solutions.
+        </p>
+
+        {/* The Elevator Pitch Summary */}
+        <p className="text-base text-gray-300 mb-10 max-w-2xl mx-auto">
+          Adept at solving complex challenges and optimising system performance. Proven track record in leading teams and integrating with external partners in the banking and payment sectors.
+        </p>
+
+        {/* Key Technologies Highlight */}
+        <div className="my-10 p-4 border-t border-b border-gray-700">
+          <h2 className="text-md font-medium text-gray-400 mb-4 uppercase tracking-wider">
+            Core Technology Focus
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {keyTechnologies.map(tech => (
+              <span
+                key={tech}
+                className="px-4 py-2 bg-gray-800 text-teal-400 font-bold text-sm rounded-full shadow-lg border border-teal-500/50"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Direct Call to Action Links - Professional Color Palette */}
+        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 my-12">
+
+          {/* Projects Button - Primary Action */}
+          <Link
+            href="/projects"
+            className="px-8 py-4 bg-teal-600 text-white text-xl font-bold rounded-lg hover:bg-teal-500 transition-all duration-300 shadow-xl shadow-teal-700/50"
+          >
+            🚀 View Key Projects ➡
+          </Link>
+
+          {/* Experience Button - Secondary Action */}
+          <Link
+            href="/experience"
+            className="px-8 py-4 bg-gray-700 text-gray-200 text-xl font-bold rounded-lg hover:bg-gray-600 transition-all duration-300 shadow-xl shadow-gray-900/50"
+          >
+            💼 Professional Experience ➡
+          </Link>
+        </div>
+
+        {/* The Live API Demonstration */}
+        <div >
+          {/* <h3 className="text-xl font-semibold text-blue-400 mb-2">Live Backend Capability Demo</h3>
+          <HealthCheckButton /> */}
+          <Link
+            href="/contact"
+            className="px-8 py-4 bg-blue-700 text-gray-200 text-xl font-bold rounded-lg hover:bg-blue-600 transition-all duration-300 shadow-xl shadow-gray-900/50"
+          >
+            💼 Live Demo Showcase ➡
+          </Link>
+        </div>
+
+      </section>
     </div>
   );
 }
