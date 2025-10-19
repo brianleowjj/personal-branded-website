@@ -25,7 +25,7 @@ export default function DemoTabs() {
     return (
         <div className="space-y-4">
             {/* Tab Navigation */}
-            <div className="flex border-b border-gray-700">
+            <div className="flex border-b border-gray-700 overflow-x-auto whitespace-nowrap">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}

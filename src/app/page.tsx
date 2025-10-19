@@ -2,7 +2,7 @@
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import HealthCheckButton from '@/components/HealthCheckButton';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Brian J.L. | Backend Developer',
@@ -16,7 +16,20 @@ export default function HomePage() {
     // Use min-h-[90vh] to ensure the content fills the screen below the Navbar
     <div className="flex min-h-[90vh] items-center justify-center p-6 sm:p-12">
       <section className="text-center max-w-4xl pt-16 pb-20">
-
+        {/* 🚀 START OF PROFILE PICTURE CODE */}
+        <div className="flex justify-center mb-8"> {/* mb-8 adds space below the image */}
+          <div className="relative w-48 h-48 md:w-64 md:h-64">
+            <Image
+              src="/profile.png" // ⬅️ **ENSURE THIS PATH MATCHES YOUR FILE IN public/**
+              alt="Brian J. Leow Professional Headshot"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-full border-4 border-teal-500 shadow-2xl"
+            // Set quality or unoptimized if necessary, but keep layout="fill" for sizing
+            />
+          </div>
+        </div>
+        {/* 🛑 END OF PROFILE PICTURE CODE */}
         {/* Your Name and Core Title */}
         <p className="text-lg text-blue-400 font-semibold mb-2 tracking-widest uppercase">
           Software Developer
@@ -68,12 +81,6 @@ export default function HomePage() {
           >
             💼 Professional Experience ➡
           </Link>
-        </div>
-
-        {/* The Live API Demonstration */}
-        <div >
-          {/* <h3 className="text-xl font-semibold text-blue-400 mb-2">Live Backend Capability Demo</h3>
-          <HealthCheckButton /> */}
           <Link
             href="/contact"
             className="px-8 py-4 bg-blue-700 text-gray-200 text-xl font-bold rounded-lg hover:bg-blue-600 transition-all duration-300 shadow-xl shadow-gray-900/50"
@@ -81,7 +88,6 @@ export default function HomePage() {
             💼 Live Demo Showcase ➡
           </Link>
         </div>
-
       </section>
     </div>
   );
