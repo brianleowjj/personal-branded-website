@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Brian J.L. | Backend Developer',
-  description: 'Experienced backend software developer specializing in banking and payment solutions. Expertise in Node.js, API development, and system optimization.',
+  title: 'Brian J.L. Portfolio | Software Developer',
+  description: 'Experienced software developer specializing in banking and payment solutions. Expertise in Node.js, API development, and system optimization.',
 };
 
 const keyTechnologies = ['Nodejs', 'Express', 'MongoDB', 'Java', 'PostgreSQL', 'Kubernetes', 'Docker'];
