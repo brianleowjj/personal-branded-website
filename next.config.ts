@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Test 
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors. Use this option with caution.
