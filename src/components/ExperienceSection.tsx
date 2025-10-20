@@ -1,15 +1,11 @@
-// src/app/experience/page.tsx
+// src/components/ExperienceSection.tsx
 
-import type { Metadata } from 'next';
 import ContentWrapper from '@/components/ContentWrapper';
 
-export const metadata: Metadata = {
-    title: 'Professional Experience | Brian J. Leow',
-    description: 'Detailed career history in FinTech, focusing on backend development, team leadership, and database performance optimization.',
-};
-
-export default function ExperiencePage() {
+// The function name should be simple and descriptive
+export default function ExperienceSection() {
     return (
+        // Keep the ContentWrapper if it handles padding/centering for this section
         <ContentWrapper>
 
             {/* H1 - Primary Focus (White) */}

@@ -1,15 +1,12 @@
-// src/app/projects/page.tsx
+// src/components/ProjectsSection.tsx
 
-import type { Metadata } from 'next';
+// ⚠️ Note: This component must be a client component because it uses Link
+'use client';
+
 import Link from 'next/link';
 import ContentWrapper from '@/components/ContentWrapper';
 
-export const metadata: Metadata = {
-    title: 'Key Projects | Brian J. Leow',
-    description: 'Showcasing FinTech and IoT projects including MARS, 1SEA Super App, and NIOTMS, highlighting API development and payment system integration.',
-};
-
-export default function ProjectsPage() {
+export default function ProjectsSection() {
     return (
         <ContentWrapper>
 

@@ -19,9 +19,14 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// export const metadata: Metadata = {
+//   title: "Brian's Backend Portfolio", // Use a better title than the default
+//   description: "Backend development portfolio showcasing API, Security, and Concurrency skills.",
+// };
+
 export const metadata: Metadata = {
-  title: "Brian's Backend Portfolio", // Use a better title than the default
-  description: "Backend development portfolio showcasing API, Security, and Concurrency skills.",
+  title: 'Brian J. Leow Portfolio | Software Developer',
+  description: 'Experienced software developer specializing in banking and payment solutions. Expertise in Node.js, API development, and system optimization.',
 };
 
 export default function RootLayout({

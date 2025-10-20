@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.49",
     "chart.js": "^4.5.1",
+    "fullpage.js": "^4.0.37",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.546.0",
     "next": "15.5.6",
