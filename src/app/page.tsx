@@ -66,6 +66,14 @@ export default function HomePage() {
         {/* Direct Call to Action Links - Professional Color Palette */}
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 my-12">
 
+          <a
+            href="/BrianJiaJunLeow_Resume.pdf" // Ensure this path is correct
+            download // Forces the browser to download the file
+            className="px-8 py-4 bg-red-700 text-white text-xl font-bold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-xl shadow-red-900/50 flex items-center justify-center space-x-2"
+          >
+            Download Resume
+          </a>
+
           {/* Projects Button - Primary Action */}
           <Link
             href="/projects"
