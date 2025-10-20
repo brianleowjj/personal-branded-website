@@ -5,7 +5,7 @@ import ContentWrapper from '@/components/ContentWrapper';
 import EducationItem from '@/components/EducationItem';
 
 export const metadata: Metadata = {
-    title: 'Technical Skills & Tools | Brian Leow',
+    title: 'Technical Skills & Tools | Brian J. Leow',
     description: 'Comprehensive list of technical competencies including Nodejs, Express, PostgreSQL, MongoDB, Docker, Kubernetes, and MQTT.',
 };
 

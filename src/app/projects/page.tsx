@@ -5,7 +5,7 @@ import Link from 'next/link';
 import ContentWrapper from '@/components/ContentWrapper';
 
 export const metadata: Metadata = {
-    title: 'Key Projects | Brian Leow',
+    title: 'Key Projects | Brian J. Leow',
     description: 'Showcasing FinTech and IoT projects including MARS, 1SEA Super App, and NIOTMS, highlighting API development and payment system integration.',
 };
 

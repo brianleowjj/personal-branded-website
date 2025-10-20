@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import ContentWrapper from '@/components/ContentWrapper';
 
 export const metadata: Metadata = {
-    title: 'Professional Experience | Brian Leow',
+    title: 'Professional Experience | Brian J. Leow',
     description: 'Detailed career history in FinTech, focusing on backend development, team leadership, and database performance optimization.',
 };
 

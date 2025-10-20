@@ -8,7 +8,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Contact & API Demo | Brian Leow',
+    title: 'Contact & API Demo | Brian J. Leow',
     description: 'Get in touch or test a live demonstration of my Next.js API route handling and backend health check logic.',
 };
 
