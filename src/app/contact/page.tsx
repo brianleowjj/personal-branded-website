@@ -58,10 +58,10 @@ export default function ContactPage() {
                         href="https://wa.me/353873794639"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center p-1 -ml-1 rounded-md text-green-500 hover:text-teal-400 hover:bg-gray-700/50 transition-colors"
+                        className="flex items-center p-1 -ml-1 rounded-md text-blue-500 hover:text-teal-400 hover:bg-gray-700/50 transition-colors"
                     >
                         {/* Use FaWhatsapp here */}
-                        <FaWhatsapp className="w-5 h-5 mr-3 text-green-500" />
+                        <FaWhatsapp className="w-5 h-5 mr-3 text-teal-400" />
                         <strong className="font-medium text-gray-300 mr-1">WhatsApp:</strong>
                         <span className="ml-1">Start Chat</span>
                     </Link>
