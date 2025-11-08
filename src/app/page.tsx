@@ -7,13 +7,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import ReactFullpage from '@fullpage/react-fullpage';
+// import ReactFullpage from '@fullpage/react-fullpage';
 
 // 🚀 IMPORT ALL SECTION COMPONENTS YOU CREATED
 import ExperienceSection from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SkillsSection from '@/components/SkillsSection';
 import ContactSection from '@/components/ContactSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 
 // --- DATA (Keep this data local) ---
@@ -79,7 +80,7 @@ export default function HomePage() {
       </div>
 
       {/* Direct Call to Action Links - Convert Next.js Link to standard <a> tags */}
-      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 my-12">
+      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-12 mb-0">
 
         <a
           href="/BrianJiaJunLeow_Resume.pdf"
@@ -110,48 +111,38 @@ export default function HomePage() {
   );
   // ------------------------------------------------------------------
 
-
-  // ------------------------------------------------------------------
-  // 2. WRAP ALL SECTIONS WITH ReactFullpage
-  // ------------------------------------------------------------------
   return (
-    <ReactFullpage
-      scrollingSpeed={1000}
-      navigation={true}
-      navigationTooltips={sectionLabels}
-      showActiveTooltip={true}
-      licenseKey={''}
-      credits={{}}
-      render={({ state, fullpageApi }) => (
-        <ReactFullpage.Wrapper>
+    // ⚠️ We use a standard container now, NOT ReactFullpage
+    <div className='scroll-snapp-container'>
+      {/* 1. HOME SECTION */}
+      {/* 🚀 Apply the new class */}
+      <section id="home" className="scroll-snap-section">
+        {HomeContent}
+      </section>
 
-          {/* 1. HOME SECTION: USES THE HomeContent VARIABLE */}
-          <div id="home" className="section flex items-center justify-center">
-            {HomeContent}
-          </div>
+      {/* 2. EXPERIENCE SECTION */}
+      <section id="experience" className="scroll-snap-section">
+        <ExperienceSection />
+      </section>
 
-          {/* 2. EXPERIENCE SECTION */}
-          <div id="experience" className="section flex items-center justify-center">
-            <ExperienceSection />
-          </div>
+      {/* 3. PROJECTS SECTION */}
+      <section id="projects" className="scroll-snap-section">
+        <ProjectsSection />
+      </section>
 
-          {/* 3. PROJECTS SECTION */}
-          <div id="projects" className="section flex items-center justify-center">
-            <ProjectsSection />
-          </div>
+      {/* 4. SKILLS SECTION */}
+      <section id="skills" className="scroll-snap-section">
+        <SkillsSection />
+      </section>
 
-          {/* 4. SKILLS SECTION */}
-          <div id="skills" className="section flex items-center justify-center">
-            <SkillsSection />
-          </div>
+      <section id="testimonials" className="scroll-snap-section">
+        <TestimonialsSection />
+      </section>
 
-          {/* 5. CONTACT/DEMO SECTION */}
-          <div id="contact" className="section flex items-center justify-center">
-            <ContactSection />
-          </div>
-
-        </ReactFullpage.Wrapper>
-      )}
-    />
+      {/* 5. CONTACT/DEMO SECTION */}
+      <section id="contact" className="scroll-snap-section">
+        <ContactSection />
+      </section>
+    </div>
   );
 }
