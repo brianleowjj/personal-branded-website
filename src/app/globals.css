@@ -37,17 +37,28 @@ body {
 .scroll-snap-container {
   /* CRITICAL: This element must be the one that scrolls */
   height: 100vh;
+  height: 100dvh;
   overflow-y: scroll;
 
   /* Apply scroll snap here, NOT on HTML/BODY */
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+
+  /* 1. Hide Scrollbar for Firefox */
+  scrollbar-width: none;
+  /* 2. Hide Scrollbar for IE and Edge */
+  -ms-overflow-style: none;
 }
 
 /* Target the individual section containers inside your page.tsx */
 .scroll-snap-section {
   /* Each section must take up the full viewport height */
-  height: 100vh;
+  /* height: 100vh; */
+
+  /* Fallback for Desktop: */
+  min-height: 101vh;
+  /* Priority for Mobile: Use Dynamic Viewport Height */
+  min-height: 101dvh;
 
   /* Tell the section where to snap */
   scroll-snap-align: start;
