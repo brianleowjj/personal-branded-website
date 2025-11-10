@@ -89,7 +89,7 @@ export default function HomePage() {
 
   return (
     // ⚠️ We use a standard container now, NOT ReactFullpage
-    <div className='scroll-snapp-container'>
+    <div className='scroll-snap-container'>
       {/* 1. HOME SECTION */}
       {/* 🚀 Apply the new class */}
       <section id="home" className="scroll-snap-section">

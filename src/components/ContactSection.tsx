@@ -5,19 +5,22 @@
 
 import Link from 'next/link';
 // Import the necessary icons and components
-import ContentWrapper from '@/components/ContentWrapper';
 import DemoTabs from '@/components/DemoTabs';
 import { Linkedin, Github, Mail, Phone } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
-// The function name should be simple and descriptive
+// NOTE: I am assuming you will REMOVE the ContentWrapper import, as we are replacing its functionality.
+// import ContentWrapper from '@/components/ContentWrapper'; // <-- REMOVED
+
 export default function ContactSection() {
     return (
-        // ⚠️ ContentWrapper is a layout component. You might want to remove it 
-        // if your page.tsx layout already handles the centering/padding. 
-        // For now, keep the structure as is:
-        <section id="contact">
-            <ContentWrapper>
+        <section id="contact" className="min-h-screen snap-start flex items-center justify-center w-full">
+
+            {/* 🚀 FIX APPLIED HERE: Direct mobile padding (px-4) and max width (max-w-7xl mx-auto) 
+                to contain the content properly within the viewport. */}
+            <div className="max-w-6xl mx-auto w-full px-4 md:px-8 py-6 
+                bg-gray-900 shadow-2xl rounded-lg border border-gray-800">
+
                 <h1 className="text-4xl font-extrabold text-white mb-8 border-b border-gray-700 pb-4">
                     Contact & Demo
                 </h1>
@@ -80,6 +83,8 @@ export default function ContactSection() {
                 </section>
 
                 {/* API Demonstration */}
+                {/* This section contains DemoTabs, which might be inherently wide. 
+                   By wrapping it, we ensure it respects the max-width and padding. */}
                 <section className="p-6 border rounded-lg shadow-md bg-gray-800 border-blue-400">
                     <h2 className="text-2xl font-semibold text-blue-400 mb-4">Backend Demo Showcase</h2>
                     <p className="text-gray-400 mb-4">
@@ -89,7 +94,7 @@ export default function ContactSection() {
                     <DemoTabs />
 
                 </section>
-            </ContentWrapper>
+            </div>
         </section>
     );
 }
