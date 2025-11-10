@@ -1,81 +1,91 @@
 // src/components/Navbar.tsx
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react'; // You'll need to install 'lucide-react' for icons
+import React, { useState, useEffect } from 'react';
+import { Download } from 'lucide-react'; // 🚀 IMPORT ICON HERE!
 
-// If you haven't installed lucide-react yet:
-// npm install lucide-react
-
+// Define the navigation items and map them to section IDs
 const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Experience', href: '/experience' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Skills', href: '/skills' },
-    { name: 'Contact & Demo', href: '/contact' },
+    { name: 'Home', href: '#home', id: 'home', type: 'link' },
+    { name: 'Experience', href: '#experience', id: 'experience', type: 'link' },
+    { name: 'Projects', href: '#projects', id: 'projects', type: 'link' },
+    { name: 'Skills', href: '#skills', id: 'skills', type: 'link' },
+    { name: 'Testimonials', href: '#testimonials', id: 'testimonials', type: 'link' },
+    { name: 'Contact & Demo', href: '#contact', id: 'contact', type: 'link' },
+    // Resume link must include type: 'button'
+    { name: 'Download Resume', href: '/BrianJiaJunLeow_Resume.pdf', id: 'resume', type: 'button' },
 ];
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
 
-    const toggleMenu = () => setIsOpen(!isOpen);
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -50% 0px',
+            threshold: 0,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        }, observerOptions);
+
+        // Find all sections by their IDs and observe them
+        navItems.forEach(item => {
+            // 🚀 FIX 1: Only observe sections (type: 'link'), not the button
+            if (item.type === 'link') {
+                const section = document.getElementById(item.id);
+                if (section) {
+                    observer.observe(section);
+                }
+            }
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
 
     return (
-        <header className="sticky top-0 z-50 bg-gray-900 border-b border-gray-700 shadow-lg">
-            <nav className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
-                    {/* Brand/Logo Section (Always Visible) */}
-                    <div className="flex-shrink-0">
-                        <Link href="/" className="text-xl font-extrabold text-white leading-none">
-                            <span className="block text-teal-400">Brian J. Leow</span>
-                            <span className="block text-sm font-medium text-gray-400">Software Developer</span>
-                        </Link>
-                    </div>
+        <header className="fixed top-0 z-50 w-full bg-[#1e293b] shadow-xl py-3 px-4 border-b border-gray-700">
+            <nav className="max-w-7xl mx-auto flex justify-between items-center">
 
-                    {/* 1. Desktop Menu (Hidden on Small Screens) */}
-                    <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        {navItems.map((item) => (
-                            <Link key={item.name} href={item.href} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                                {item.name}
-                            </Link>
-                        ))}
-                    </div>
+                <div className="text-teal-400">
+                    <p className="text-lg font-bold text-teal-400">Brian J. Leow</p>
+                    <p className="text-sm text-blue-400">Software Developer</p>
+                </div>
 
-                    {/* 2. Mobile Menu Button (Visible on Small Screens) */}
-                    <div className="sm:hidden">
-                        <button
-                            onClick={toggleMenu}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                            aria-controls="mobile-menu"
-                            aria-expanded="false"
+                {/* Navigation Links */}
+                <div className="flex space-x-6 items-center">
+                    {navItems.map((item) => (
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            // Set target/download attributes only for the button
+                            target={item.type === 'button' ? '_blank' : '_self'}
+                            rel={item.type === 'button' ? 'noopener noreferrer' : undefined}
+                            download={item.type === 'button' ? true : false}
+                            className={`
+                                text-lg transition-colors duration-200 py-1 flex items-center
+                                ${item.type === 'button'
+                                    ?
+                                    'ml-6 px-3 py-1.5 bg-red-700 text-white rounded-md shadow-md hover:bg-red-800 transition-colors duration-200 font-bold text-sm border-none'
+                                    : activeSection === item.id
+                                        ? 'text-white border-b-2 border-teal-400 font-semibold' // Active link style
+                                        : 'text-gray-300 hover:text-white hover:border-b-2 hover:border-teal-400' // Inactive link style
+                                }
+                            `}
                         >
-                            <span className="sr-only">Open main menu</span>
-                            {/* Toggle between Menu (Hamburger) and X (Close) icon */}
-                            {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
-                        </button>
-                    </div>
+                            {item.type === 'button' && <Download className="w-4 h-4 mr-2" />}
+                            {item.name}
+                        </a>
+                    ))}
                 </div>
             </nav>
-
-            {/* 3. Mobile Menu Panel (Conditional Rendering) */}
-            {isOpen && (
-                <div className="sm:hidden" id="mobile-menu">
-                    <div className="px-2 pt-2 pb-3 space-y-1">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                // Close the menu when an item is clicked
-                                onClick={toggleMenu}
-                                className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors"
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
         </header>
     );
 }

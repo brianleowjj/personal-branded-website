@@ -112,17 +112,17 @@ export default function LiveTicker() {
     const latestEthereumData = history.ethereum.slice(-1)[0]!;
 
     return (
-        <div className="space-y-6 p-4 bg-gray-800 rounded-lg border border-teal-500/50">
+        <div className="w-full space-y-6 p-4 bg-gray-800 rounded-lg border border-teal-500/50">
             <h2 className="text-xl font-semibold text-teal-400 mb-3 border-b border-gray-700 pb-2">Live Ticker & Trend</h2>
 
             {/* FIGURES SECTION (Current Prices and 24h Change) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
                 <CoinDisplay name="Bitcoin (BTC)" data={latestBitcoinData} />
                 <CoinDisplay name="Ethereum (ETH)" data={latestEthereumData} />
             </div>
 
             {/* 🚀 CHART SECTION 🚀 */}
-            <div className="space-y-6">
+            <div className="w-full space-y-6 min-h-60">
                 <CryptoChart
                     coinName="Bitcoin (BTC)"
                     chartData={history.bitcoin}

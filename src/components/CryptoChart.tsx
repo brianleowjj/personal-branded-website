@@ -71,11 +71,14 @@ export default function CryptoChart({ coinName, chartData, lineColor, label, max
     };
 
     return (
-        <div className="pt-4 border-t border-gray-700">
-            {/* Set a fixed height for the chart container */}
-            <div style={{ height: '250px' }}>
-                <Line data={data} options={options} />
-            </div>
+        // <div className="w-full pt-4 border-t border-gray-700">
+        //     {/* Set a fixed height for the chart container */}
+        //     <div className='w-full' style={{ height: '250px' }}>
+        //         <Line data={data} options={options} />
+        //     </div>
+        // </div>
+        <div className="w-full pt-4 border-t border-gray-700" style={{ height: '300px' }}>
+            <Line data={data} options={options} />
         </div>
     );
 }

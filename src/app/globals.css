@@ -5,6 +5,96 @@
   --foreground: #171717;
 }
 
+/* 1. Prevent Browser Scrolling from interfering with fullpage.js */
+/* This is CRITICAL for full-page scrolling libraries */
+html {
+  /* Set the root scroll container to snap to Y axis points */
+  /* scroll-snap-type: y mandatory; */
+
+  /* Ensure the HTML element uses the full height of the viewport */
+  height: 100%;
+
+  /* Smooth scrolling behavior (optional, but nice) */
+  scroll-behavior: smooth;
+
+  /* Ensure no scrollbar appears on the main document */
+  overflow-y: auto;
+
+  scrollbar-width: none;
+}
+
+body {
+  /* Ensure body takes up all space */
+  min-height: 100vh;
+
+  overflow-y: auto;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* 🚀 NEW: THE SCROLL SNAP CONTAINER CLASS */
+.scroll-snap-container {
+  /* CRITICAL: This element must be the one that scrolls */
+  height: 100vh;
+  overflow-y: scroll;
+
+  /* Apply scroll snap here, NOT on HTML/BODY */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Target the individual section containers inside your page.tsx */
+.scroll-snap-section {
+  /* Each section must take up the full viewport height */
+  height: 100vh;
+
+  /* Tell the section where to snap */
+  scroll-snap-align: start;
+
+  /* Ensure content cannot overflow the 100vh height */
+  /* This prevents the content from bleeding into the next section */
+  /* overflow: hidden; */
+  overflow-y: auto;
+
+  /* Optional: Center content vertically within the section */
+  display: flex;
+  /* align-items: center; */
+  align-items: flex-start;
+  justify-content: center;
+
+  /* Add a little padding-top to push the content below the fixed Navbar */
+  padding-top: 100px;
+  /* 🚀 ADJUST THIS TO YOUR NAVBAR'S HEIGHT */
+  padding-bottom: 20px;
+  /* Optional: Adds a small buffer at the bottom */
+
+  /* 1. Hide Scrollbar for Firefox */
+  scrollbar-width: none;
+
+  /* 2. Hide Scrollbar for IE and Edge */
+  -ms-overflow-style: none;
+}
+
+.scroll-snap-section canvas {
+  /* Ensures the canvas always expands to its parent's width */
+  width: 100% !important;
+  /* Ensures the canvas always expands to its parent's height */
+  height: 100% !important;
+  /* Overrides internal sizing logic */
+  max-width: 100% !important;
+}
+
+/* 4. Hide Scrollbar for Chrome, Safari, and Opera (Webkit browsers) */
+/* This specific selector is often the one that fails without !important */
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none !important;
+  /* <--- ADD THIS !important */
+  width: 0px !important;
+  /* <--- ADD THIS to ensure zero width */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
