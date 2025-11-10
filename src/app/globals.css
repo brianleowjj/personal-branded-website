@@ -76,6 +76,15 @@ body {
   -ms-overflow-style: none;
 }
 
+.scroll-snap-section canvas {
+  /* Ensures the canvas always expands to its parent's width */
+  width: 100% !important;
+  /* Ensures the canvas always expands to its parent's height */
+  height: 100% !important;
+  /* Overrides internal sizing logic */
+  max-width: 100% !important;
+}
+
 /* 4. Hide Scrollbar for Chrome, Safari, and Opera (Webkit browsers) */
 /* This specific selector is often the one that fails without !important */
 body::-webkit-scrollbar,

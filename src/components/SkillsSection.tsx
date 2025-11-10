@@ -22,78 +22,80 @@ const SkillBadge = ({ skill }: { skill: string }) => (
 
 export default function SkillsSection() {
     return (
-        <ContentWrapper>
-            <h1 className="text-4xl font-extrabold text-white mb-8 border-b border-gray-700 pb-4">
-                Technical Skills & Competencies
-            </h1>
+        <section id="skills">
+            <ContentWrapper>
+                <h1 className="text-4xl font-extrabold text-white mb-8 border-b border-gray-700 pb-4">
+                    Technical Skills & Competencies
+                </h1>
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-bold text-blue-400 mb-4">Core Backend & Programming Languages</h2>
-                <div className="flex flex-wrap">
-                    {languages.sort().map(s => <SkillBadge key={s} skill={s} />)}
-                </div>
-            </section>
+                <section className="mb-8">
+                    <h2 className="text-2xl font-bold text-blue-400 mb-4">Core Backend & Programming Languages</h2>
+                    <div className="flex flex-wrap">
+                        {languages.sort().map(s => <SkillBadge key={s} skill={s} />)}
+                    </div>
+                </section>
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-bold text-blue-400 mb-4">Database Systems</h2>
-                <div className="flex flex-wrap">
-                    {databases.sort().map(s => <SkillBadge key={s} skill={s} />)}
-                </div>
-            </section>
+                <section className="mb-8">
+                    <h2 className="text-2xl font-bold text-blue-400 mb-4">Database Systems</h2>
+                    <div className="flex flex-wrap">
+                        {databases.sort().map(s => <SkillBadge key={s} skill={s} />)}
+                    </div>
+                </section>
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-bold text-blue-400 mb-4">DevOps, Monitoring & Collaboration</h2>
-                <div className="flex flex-wrap">
-                    {devOpsTools.sort().map(s => <SkillBadge key={s} skill={s} />)}
-                </div>
-            </section>
+                <section className="mb-8">
+                    <h2 className="text-2xl font-bold text-blue-400 mb-4">DevOps, Monitoring & Collaboration</h2>
+                    <div className="flex flex-wrap">
+                        {devOpsTools.sort().map(s => <SkillBadge key={s} skill={s} />)}
+                    </div>
+                </section>
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-bold text-blue-400 mb-4">Frameworks & Tools</h2>
-                <div className="flex flex-wrap">
-                    {frameworks.sort().map(s => <SkillBadge key={s} skill={s} />)}
-                    {developmentTools.sort().map(s => <SkillBadge key={s} skill={s} />)}
-                </div>
-            </section>
+                <section className="mb-8">
+                    <h2 className="text-2xl font-bold text-blue-400 mb-4">Frameworks & Tools</h2>
+                    <div className="flex flex-wrap">
+                        {frameworks.sort().map(s => <SkillBadge key={s} skill={s} />)}
+                        {developmentTools.sort().map(s => <SkillBadge key={s} skill={s} />)}
+                    </div>
+                </section>
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-bold text-blue-400 mb-4">Operating Systems</h2>
-                <div className="flex flex-wrap mb-4">
-                    {operatingSystems.sort().map(s => <SkillBadge key={s} skill={s} />)}
-                </div>
-            </section>
+                <section className="mb-8">
+                    <h2 className="text-2xl font-bold text-blue-400 mb-4">Operating Systems</h2>
+                    <div className="flex flex-wrap mb-4">
+                        {operatingSystems.sort().map(s => <SkillBadge key={s} skill={s} />)}
+                    </div>
+                </section>
 
-            <section className="mt-8">
-                <h2 className="text-2xl font-bold text-blue-400 mb-4">Spoken Languages</h2>
-                <div className="flex flex-wrap mb-4">
-                    {speakingLanguages.sort().map(s => <SkillBadge key={s} skill={s} />)}
-                </div>
-            </section>
+                <section className="mt-8">
+                    <h2 className="text-2xl font-bold text-blue-400 mb-4">Spoken Languages</h2>
+                    <div className="flex flex-wrap mb-4">
+                        {speakingLanguages.sort().map(s => <SkillBadge key={s} skill={s} />)}
+                    </div>
+                </section>
 
-            {/* Formal Education */}
-            <section className="mb-8 mt-10 border-t border-gray-700 pt-6">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                    Education
-                </h2>
+                {/* Formal Education */}
+                <section className="mb-8 mt-10 border-t border-gray-700 pt-6">
+                    <h2 className="text-3xl font-bold text-white mb-4">
+                        Education
+                    </h2>
 
-                <div className="space-y-6">
+                    <div className="space-y-6">
 
-                    <EducationItem
-                        institution="University College Dublin"
-                        degree="Masters of Science in Project Management"
-                        duration="Expected to Graduate: September 2026"
-                        logoPath="/images/logos/ucd-logo.png"
-                    />
+                        <EducationItem
+                            institution="University College Dublin"
+                            degree="Masters of Science in Project Management"
+                            duration="Expected to Graduate: September 2026"
+                            logoPath="/images/logos/ucd-logo.png"
+                        />
 
-                    <EducationItem
-                        institution="Sheffield Hallam University"
-                        degree="Bachelor of Engineering with Honours in Software Engineering"
-                        duration="Second Class Honours (1st Division) (2018)"
-                        logoPath="/images/logos/shu-logo.png"
-                    />
+                        <EducationItem
+                            institution="Sheffield Hallam University"
+                            degree="Bachelor of Engineering with Honours in Software Engineering"
+                            duration="Second Class Honours (1st Division) (2018)"
+                            logoPath="/images/logos/shu-logo.png"
+                        />
 
-                </div>
-            </section>
-        </ContentWrapper>
+                    </div>
+                </section>
+            </ContentWrapper>
+        </section>
     );
 }

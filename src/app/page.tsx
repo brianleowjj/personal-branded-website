@@ -53,7 +53,7 @@ export default function HomePage() {
       <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">
         Brian Jia Jun Leow
       </h1>
-      <p className="text-xl md:text-2xl text-gray-400 mb-8 font-light italic max-w-3xl mx-auto">
+      <p className="text-2xl font-light text-teal-400 italic mx-auto max-w-2xl mt-4 mb-8">
         Expert in API development and database management, delivering high-quality, efficient software solutions.
       </p>
 
@@ -71,41 +71,17 @@ export default function HomePage() {
           {keyTechnologies.map(tech => (
             <span
               key={tech}
-              className="px-4 py-2 bg-gray-800 text-teal-400 font-bold text-sm rounded-full shadow-lg border border-teal-500/50"
+              className="px-4 py-2 bg-gray-800 text-teal-400 font-bold text-sm rounded-full shadow-lg border border-teal-500/50
+                transition-all duration-300 
+                hover:-translate-y-1 
+                hover:shadow-xl 
+                hover:shadow-teal-400/30
+              "
             >
               {tech}
             </span>
           ))}
         </div>
-      </div>
-
-      {/* Direct Call to Action Links - Convert Next.js Link to standard <a> tags */}
-      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-12 mb-0">
-
-        <a
-          href="/BrianJiaJunLeow_Resume.pdf"
-          download
-          className="px-8 py-4 bg-red-700 text-white text-xl font-bold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-xl shadow-red-900/50 flex items-center justify-center space-x-2"
-        >
-          Download Resume
-        </a>
-
-        {/* ⚠️ Update links to use hash tags for in-page navigation */}
-        <a href="#projects"
-          className="px-8 py-4 bg-teal-600 text-white text-xl font-bold rounded-lg hover:bg-teal-500 transition-all duration-300 shadow-xl shadow-teal-700/50"
-        >
-          View Key Projects
-        </a>
-        <a href="#experience"
-          className="px-8 py-4 bg-gray-700 text-gray-200 text-xl font-bold rounded-lg hover:bg-gray-600 transition-all duration-300 shadow-xl shadow-gray-900/50"
-        >
-          Professional Experience
-        </a>
-        <a href="#contact"
-          className="px-8 py-4 bg-blue-700 text-gray-200 text-xl font-bold rounded-lg hover:bg-blue-600 transition-all duration-300 shadow-xl shadow-gray-900/50"
-        >
-          Live Demo Showcase
-        </a>
       </div>
     </div>
   );
