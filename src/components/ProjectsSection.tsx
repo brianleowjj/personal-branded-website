@@ -25,8 +25,8 @@ const projectsData = [
             'Collaborated with the frontend team to ensure a user-friendly and intuitive application experience.',
         ],
         links: [
-            { name: 'View on App Store', href: 'https://apps.apple.com/us/app/1sea/id1571404170' },
-            { name: 'View on Google Play', href: 'https://play.google.com/store/apps/details?id=com.one.sea' },
+            // { name: 'View on App Store', href: 'https://apps.apple.com/us/app/1sea/id1571404170' },
+            // { name: 'View on Google Play', href: 'https://play.google.com/store/apps/details?id=com.one.sea' },
         ],
     },
     {

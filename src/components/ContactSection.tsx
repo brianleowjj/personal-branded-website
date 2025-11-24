@@ -38,11 +38,11 @@ export default function ContactSection() {
                         </p>
 
                         {/* Phone */}
-                        <p className="flex items-center">
+                        {/* <p className="flex items-center">
                             <Phone className="w-5 h-5 mr-3 text-teal-400" />
                             <strong className="font-medium">Phone:</strong>{' '}
                             <a href="tel:+353873794639" className="text-blue-500 hover:underline ml-1">+353 (087) 379 4639</a>
-                        </p>
+                        </p> */}
 
                         {/* LinkedIn Link */}
                         <Link
