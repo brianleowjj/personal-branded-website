@@ -81,7 +81,7 @@ function ProjectList() {
                     </ul>
 
                     {/* Links */}
-                    {project.links.length > 0 && (
+                    {/* {project.links.length > 0 && (
                         <div className="mt-3 space-x-4">
                             {project.links.map((link, idx) => (
                                 <Link
@@ -94,7 +94,7 @@ function ProjectList() {
                                 </Link>
                             ))}
                         </div>
-                    )}
+                    )} */}
                 </section>
             ))}
         </div>
