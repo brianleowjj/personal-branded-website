@@ -86,7 +86,7 @@ export default function ContactSection() {
                 {/* This section contains DemoTabs, which might be inherently wide. 
                    By wrapping it, we ensure it respects the max-width and padding. */}
                 <section className="p-6 border rounded-lg shadow-md bg-gray-800 border-blue-400">
-                    <h2 className="text-2xl font-semibold text-blue-400 mb-4">Backend Demo Showcase</h2>
+                    <h2 className="text-2xl font-semibold text-blue-400 mb-4">Technical Demo Showcase</h2>
                     <p className="text-gray-400 mb-4">
                         Explore different aspects of my backend expertise, from real-time data integration and caching to fundamental security implementation.
                     </p>
