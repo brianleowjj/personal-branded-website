@@ -13,7 +13,7 @@ const projectsData = [
         features: [
             'Integrated multiple allocation methods such as e-wallet top up and voucher allocation.',
             'Implemented redemption methods using registered card ID / NFC card or a unique 6-digit code.',
-            'Key features include customizable campaigns, packages, and real-time transaction monitoring.',
+            'Key features include customisable campaigns, packages, and real-time transaction monitoring.',
         ],
         links: [],
     },
@@ -34,7 +34,7 @@ const projectsData = [
         description: 'A management system that allows clients to remotely manage and monitor their IoT machines.',
         features: [
             'Transformed unattended machines into smart devices involving payment and sales tracking features.',
-            'Coordinated with the IoT team, utilizing the MQTT framework to integrate machine-to-machine communication.',
+            'Coordinated with the IoT team, utilising the MQTT framework to integrate machine-to-machine communication.',
             'Partnered with frontend to design a user-friendly and optimised portal for an optimum user experience.',
         ],
         links: [],

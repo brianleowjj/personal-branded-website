@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Brian J. Leow Portfolio | Software Developer',
-  description: 'Experienced software developer specializing in banking and payment solutions. Expertise in Node.js, API development, and system optimization.',
+  description: 'Experienced software developer specialising in banking and payment solutions. Expertise in Node.js, API development, and system optimisation.',
 };
 
 export default function RootLayout({
