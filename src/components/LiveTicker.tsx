@@ -95,7 +95,7 @@ export default function LiveTicker() {
 
     useEffect(() => {
         fetchData();
-        const intervalId = setInterval(fetchData, 20000);
+        const intervalId = setInterval(fetchData, 30000);
         return () => clearInterval(intervalId);
     }, [fetchData]);
 
