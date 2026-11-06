@@ -82,7 +82,7 @@ export default function SkillsSection() {
                         <EducationItem
                             institution="University College Dublin"
                             degree="Masters of Science in Project Management"
-                            duration="Expected to Graduate: September 2026"
+                            duration="2:1, GPA 3.56 (2026)"
                             logoPath="/images/logos/ucd-logo.png"
                         />
 

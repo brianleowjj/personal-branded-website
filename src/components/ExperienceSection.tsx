@@ -29,7 +29,7 @@ export default function ExperienceSection() {
                             <p className="text-lg font-semibold text-gray-400">Green Acre Volunteer Team Member</p>
                         </div>
                         {/* Dates - Tertiary Focus (Medium Gray) */}
-                        <p className="text-md text-gray-500 text-right">Sep 2025 - Present</p>
+                        <p className="text-md text-gray-500 text-right">Sep 2025 - July 2026</p>
                     </div>
                     {/* List Items - Readable Content (Global CSS should make this brighter) */}
                     <ul className="list-disc list-inside space-y-2 ml-4">

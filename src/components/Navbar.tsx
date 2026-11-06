@@ -12,7 +12,7 @@ const navItems = [
     { name: 'Testimonials', href: '#testimonials', id: 'testimonials', type: 'link' },
     { name: 'Contact & Demo', href: '#contact', id: 'contact', type: 'link' },
     // Resume link must include type: 'button' (NOTE: We'll pull this out of the main map below)
-    { name: 'Download Resume', href: '/BrianJiaJunLeow_Resume.pdf', id: 'resume', type: 'button' },
+    { name: 'Download Resume', href: '/Brian_Leow_CV_Backend.pdf', id: 'resume', type: 'button' },
 ];
 
 // Separate links from the button for distinct rendering
